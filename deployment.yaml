@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-book-service
+  labels:
+    app: api-book-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-book-service
+  template:
+    metadata:
+      labels:
+        app: api-book-service
+    spec:
+      containers:
+        - name: api-book-server
+          image: api-book:v2
+          ports:
+            - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            limits:
+              memory: "4Gi"
+              cpu: "4"

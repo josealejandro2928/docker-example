@@ -21,7 +21,22 @@ app.get("/", (req, res) => {
         hostName: hostname(),
         version: process.env.VERSION || version,
         NODE_PORT: 3000,
-        requestId: Math.floor(Math.random() * 1000000)
+        requestId: Math.floor(Math.random() * 1000000),
+        pid: process.pid,
+        author: "Jose Alejandro"
+    });
+})
+
+app.get("/health", (req, res) => {
+    res.send({
+        message: "Hello from server",
+        time: new Date(),
+        hostName: hostname(),
+        version: process.env.VERSION || version,
+        NODE_PORT: 3000,
+        requestId: Math.floor(Math.random() * 1000000),
+        pid: process.pid,
+        author: "Jose Alejandro"
     });
 })
 
