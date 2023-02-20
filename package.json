@@ -1,0 +1,28 @@
+{
+  "name": "docker-example",
+  "version": "1.0.0",
+  "description": "A example api with docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "sh ./run-dev.sh",
+    "prod": "sh ./run-prod.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "docker"
+  ],
+  "author": "Jose Alejandro Concepcion Alvarez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "helmet": "^6.0.1",
+    "mini-express-server": "^1.1.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0"
+  }
+}

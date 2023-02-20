@@ -1,0 +1,11 @@
+services:
+  api-book:
+    image: api-book:v1
+    build: .
+    container_name: api-book
+    command: nodemon
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
