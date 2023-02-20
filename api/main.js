@@ -19,8 +19,9 @@ app.get("/", (req, res) => {
         message: "Hello from server",
         time: new Date(),
         hostName: hostname(),
-        version: version,
-        NODE_PORT: process.NODE_PORT
+        version: process.env.VERSION || version,
+        NODE_PORT: 3000,
+        requestId: Math.floor(Math.random() * 1000000)
     });
 })
 
